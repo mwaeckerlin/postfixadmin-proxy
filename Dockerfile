@@ -1,7 +1,6 @@
 FROM mwaeckerlin/very-base as postfixadmin
 RUN $PKG_INSTALL postfixadmin
 RUN mv /usr/share/webapps/postfixadmin /root/app
-RUN find /root/app -name '*.php' -exec rm '{}' \;
 
 FROM mwaeckerlin/nginx as nginx
 
