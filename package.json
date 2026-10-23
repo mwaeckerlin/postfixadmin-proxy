@@ -1,0 +1,14 @@
+{
+  "name": "@mwaeckerlin/postfixadmin-proxy",
+  "version": "1.11.1",
+  "scripts": {
+    "build": "docker compose build",
+    "start": "docker compose up --build --force-recreate --remove-orphans",
+    "start:daemon": "docker compose up -d --build --force-recreate --remove-orphans",
+    "stop": "docker compose down",
+    "deploy": "docker compose push",
+    "test": "npm run test:image && npm run test:serve",
+    "test:image": "npm run build && bash tests/image-contract.sh mwaeckerlin/postfixadmin-proxy",
+    "test:serve": "bash tests/serve-contract.sh mwaeckerlin/postfixadmin-proxy"
+  }
+}
